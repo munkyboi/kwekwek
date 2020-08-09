@@ -27,6 +27,7 @@ class Renderer extends Highway.Renderer {
     });
     const slug = this.properties.slug
     document.querySelector(`[data-slug=${slug}]`).classList.add('active');
+    document.title = `${slug} - kwekwek template`;
   }
   onEnterCompleted() {
     triggerPageAnimation();
