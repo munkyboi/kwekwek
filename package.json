@@ -1,0 +1,25 @@
+{
+  "name": "highwayjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.pug",
+    "devopen": "parcel src/index.pug --open",
+    "build": "parcel build src/index.pug"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "animate.css": "^4.1.0",
+    "animate.min.css": "0.0.3",
+    "gsap": "^3.4.2",
+    "perfect-scrollbar": "^1.5.0",
+    "pug": "^3.0.0"
+  }
+}

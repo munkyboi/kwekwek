@@ -1,0 +1,52 @@
+.mainNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 10vh;
+  z-index: 10;
+}
+
+.branding {
+  img {
+    width: 100%;
+    max-width: 8rem;
+    height: auto;
+  }
+}
+
+.nav {
+  @include flex(flex-start, center);
+  width: 100%;
+  padding: 0 4rem;
+
+  // .navList
+  &List {
+    @include flex(flex-end, stretch);
+    flex-grow: 1;
+    list-style: none;
+    padding: 0rem;
+  }
+
+  // .navItem
+  &Item {
+    margin: 0 1rem;
+  }
+
+  // .navLink
+  &Link {
+    color: $white;
+    font-weight: bold;
+
+    transition: color 0.15s ease-out;
+
+    &:hover, &.active {
+      color: $yellow;
+    }
+  }
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 40rem;
+}

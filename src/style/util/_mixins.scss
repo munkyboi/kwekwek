@@ -1,0 +1,94 @@
+@mixin materialIcon($icon) {
+  content: $icon;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+@mixin flex($hAlign: flex-start, $vAlign: flex-start, $direction: row, $impt: "") {
+  display: flex #{$impt};
+  justify-content: $hAlign #{$impt};
+  align-items: $vAlign #{$impt};
+  flex-direction: $direction;
+}
+
+$scroller-track-color-inactive: #eeeeee;
+$scroller-track-color-active: #e0e0e0;
+$scroller-thumb-color-inactive: #9e9e9e;
+$scroller-thumb-color-active: $primary;
+
+@mixin applyScrollbar(
+  $scrollbar-track-bg: $scroller-track-color-inactive,
+  $scrollbar-thumb-bg: $scroller-thumb-color-inactive,
+  $scrollbar-track-bg-active: $scroller-track-color-active,
+  $scrollbar-thumb-bg-active: $scroller-thumb-color-active,
+  $scrollbar-curve: 8px,
+  $scrollbar-size: 8px
+) {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-size;
+    height: $scrollbar-size;
+    background-color: inherit;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $scrollbar-track-bg;
+    border-radius: $scrollbar-curve;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-thumb-bg;
+    border-radius: 4em;
+  }
+  &:hover {
+    &::-webkit-scrollbar-track {
+      background-color: $scrollbar-track-bg-active;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbar-thumb-bg-active;
+    }
+  }
+}
+
+@mixin overlay($z:2, $opacity: 0.5, $color: $black, $pos: absolute) {
+  content: '';
+  display: block;
+  position: $pos;
+  top: 0;
+  left: 0;
+  @if ($pos == 'fixed') {
+    width: 100vw;
+    height: 100vh;
+  }
+  @else {
+    width: 100%;
+    height: 100%;
+  }
+  z-index: $z;
+  background-color: rgba($color, $opacity);
+}

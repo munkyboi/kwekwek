@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-size: $font-size;
+  background-color: $bgcolor;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+  color: $gray;
+  font-family: 'Raleway', sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  .section:first-of-type {
+    padding-top: 70px;
+  }
+
+  .animate__animated {
+    animation-duration: 0.3s !important;
+    animation-delay: 0.3s !important;
+  }
+
+  &.animating {
+    .animated, .animate__animated, [class^=animate__delay-] {
+      opacity: 0 !important;
+      animation-delay: 0s !important;
+    }
+    
+    .main {
+      .contentWrapper {
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+    }
+
+    .transitionOverlay {
+      opacity: 1;
+    }
+
+    .ps__rail-y, .ps__rail-x {
+      display: none;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  perspective: 100vw;
+  .content {
+    perspective: 100vw;
+    transform-origin: center center;
+    position: fixed;
+  }
+  .contentWrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+}
+
+.transitionOverlay {
+  @include overlay(5, 0.5, #000000, fixed);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out 0s;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $black;
+  @include flex(center, center);
+  z-index: 2;
+
+  p {
+    font-size: 0.75rem;
+    color: $gray;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+
+.ps__rail-y, .ps__rail-x {
+  z-index: 1000;
+}
+
+@import "common/nav";
+@import "common/section";

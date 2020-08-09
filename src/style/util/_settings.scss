@@ -1,0 +1,54 @@
+// ========================
+// THEME COLORS
+// ========================
+$primary: #35B035;
+$secondary: #4680FE;
+$tertiary: #AA2225;
+$accent: #3a0ca3;
+
+
+// ========================
+// BASIC COLORS
+// ========================
+$black: #1A1A1A;
+$gray: #6c757d;
+$lightgray: #adb5bd;
+$darkgray: #212529;
+
+$red: #FF4444;
+$orange: #F98A1E;
+$yellow: #FFD544;
+$green: #30b407;
+$jade: #008B98;
+$teal: #1FC8B6;
+$blue: #0060FF;
+$indigo: #3A13B7;
+$purple: #902BEE;
+$violet: #E41DA5;
+$white: #FFF;
+
+
+// ========================
+// SYSTEM COLORS
+// ========================
+$success: #6fff43;
+$warning: #ffaf5f;
+$danger: #ff8888;
+$info: #b7b7ff;
+$bgcolor: #353535;
+
+
+// ========================
+// FONTS
+// ========================
+$font-size: 16px;
+
+
+// ========================
+// MEDIA QUERY
+// ========================
+$responsive-laptop: only screen and (max-width:1440px);
+$responsive-tablet: only screen and (min-device-width:768px) and (max-device-width:1024px), (min-width: 768px) and (max-width: 1024px);
+$responsive-phone: only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px);
+$responsive-portrait:  and (orientation: portrait);
+$responsive-landscape:  and (orientation: landscape);

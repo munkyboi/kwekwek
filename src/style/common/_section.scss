@@ -1,0 +1,113 @@
+.section {
+  @include flex(flex-start, stretch);
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+
+  &.auto {
+    min-height: auto;
+  }
+
+  &:before {
+    @include overlay(1, 0.85, #1a1423, absolute);
+  }
+
+  // .sectionWrapper
+  &Wrapper {
+    width: 100%;
+    position: relative;
+    padding: 4rem;
+    z-index: 2;
+  }
+
+  // .section--hero
+  &--hero {
+    color: $white;
+    min-height: 100vh;
+
+    background-color: $black;
+    background-image: url('/image/hero.jpg');
+    background-size: cover;
+    background-position: center center;
+
+    .sectionWrapper {
+      @include flex(center, center);
+      width: 100%;
+    }
+
+    .heroContent {
+      padding: 2rem 4rem;
+
+      &:after {
+        @include overlay(-1, 0.85, $violet);
+      }
+
+      h1 {
+        color: $white;
+      }
+    
+      p {
+        color: $lightgray;
+      }
+    }
+  }
+
+  // .section--about
+  &--about {
+    background-color: $black;
+    background-image: url('/image/about_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: $white;
+
+    h1 {
+      color: $white;
+    }
+  
+    p {
+      color: $lightgray;
+    }
+  }
+
+  // .section--portfolio
+  &--portfolio {
+    background-color: $black;
+    background-image: url('/image/portfolio_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: $white;
+
+    h1 {
+      color: $white;
+    }
+  
+    p {
+      color: $lightgray;
+    }
+  }
+
+  // .section--contact
+  &--contact {
+    background-color: $black;
+    background-image: url('/image/contact_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: $white;
+
+    h1 {
+      color: $white;
+    }
+  
+    p {
+      color: $lightgray;
+    }
+  }
+
+  h1 {
+    margin: 1rem 0;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+}

@@ -1,0 +1,16 @@
+extends _layout.pug
+
+block content
+  .content(data-router-view='home')
+    .transitionOverlay
+    .contentWrapper
+      section.section.section--hero
+        .sectionWrapper
+          .heroContent.animated.animate__fadeInUp.animate__delay-900ms
+            h1 Hero Title
+            p
+              | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ad obcaecati aliquid asperiores, eos ipsum temporibus alias laborum aliquam deserunt.
+      section.section
+        .sectionWrapper
+          div(style='width:100%; height:600px; background-color: red; margin:2rem 0;')
+          div(style='width:100%; height:600px; background-color: cyan; margin:2rem 0;')

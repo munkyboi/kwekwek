@@ -1,0 +1,33 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title HighwayJS Boilerplate
+  link(href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css')
+  link(rel='stylesheet' href='./style/styles.scss')
+.app
+  nav.nav.mainNav
+    a.branding(href='index.pug')
+      img(src='./image/logo.png' alt='Logo')
+    block nav
+      ul.navList
+        li.navItem
+          a.navLink(href='index.pug', data-slug='home')
+            span Home
+        li.navItem
+          a.navLink(href='about.pug', data-slug='about')
+            span About
+        li.navItem
+          a.navLink(href='portfolio.pug', data-slug='portfolio')
+            span Portfolio
+        li.navItem
+          a.navLink(href='contact.pug', data-slug='contact')
+            span Contact
+  .main(data-router-wrapper='')
+    block content
+
+  footer.footer
+    p
+      | created by: 
+      a(href='//www.carloabella.com') carloabella.com
+script(src='./js/index.js')
