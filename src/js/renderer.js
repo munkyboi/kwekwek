@@ -26,6 +26,16 @@ class Renderer extends Highway.Renderer {
   }
   onEnterCompleted() {
     triggerPageAnimation();
+
+    const container = this.wrap.querySelector('.contentWrapper');
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+    container.addEventListener('ps-scroll-y', (e) => {
+      if (e.target.scrollTop >= (vh / 2)) {
+        document.body.classList.add('page-scrolled');
+      } else {
+        document.body.classList.remove('page-scrolled');
+      }
+    })
   }
   onLeave() {
     document.querySelectorAll('.navLink').forEach(o => {

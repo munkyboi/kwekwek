@@ -36,6 +36,8 @@
     }
 
     .heroContent {
+      width: 100%;
+      max-width: 40rem;
       padding: 2rem 4rem;
 
       &:after {

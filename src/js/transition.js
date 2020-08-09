@@ -25,6 +25,14 @@ class Fade extends Highway.Transition {
       onComplete: function() {
         const container = to.querySelector('.contentWrapper');
         const ps = new PerfectScrollbar(container);
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+        container.addEventListener('ps-scroll-y', (e) => {
+          if (e.target.scrollTop >= (vh / 2)) {
+            document.body.classList.add('page-scrolled');
+          } else {
+            document.body.classList.remove('page-scrolled');
+          }
+        })
       },
     });
     done();
@@ -39,6 +47,10 @@ class Fade extends Highway.Transition {
       opacity: '1',
       zIndex: '1',
       transformOrigin: 'center center',
+      onComplete: function() {
+        document.body.classList.remove('page-scrolled');
+        document.body.classList.remove('menu-open');
+      }
     }, {
       transform: 'scale(0.92)',
       opacity: '1',

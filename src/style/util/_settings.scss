@@ -47,8 +47,8 @@ $font-size: 16px;
 // ========================
 // MEDIA QUERY
 // ========================
-$responsive-laptop: only screen and (max-width:1440px);
-$responsive-tablet: only screen and (min-device-width:768px) and (max-device-width:1024px), (min-width: 768px) and (max-width: 1024px);
-$responsive-phone: only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px);
-$responsive-portrait:  and (orientation: portrait);
-$responsive-landscape:  and (orientation: landscape);
+$responsive-laptop: 'only screen and (max-width:1440px)';
+$responsive-tablet: 'only screen and (min-device-width:768px) and (max-device-width:1024px), (min-width: 768px) and (max-width: 1024px)';
+$responsive-phone: 'only screen and (min-device-width:320px) and (max-device-width:736px), (min-width:320px) and (max-width:736px)';
+$responsive-portrait: 'and (orientation: portrait)';
+$responsive-landscape: 'and (orientation: landscape)';
