@@ -1,5 +1,5 @@
 {
-  "name": "highwayjs",
+  "name": "kwekwek",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "devopen": "parcel src/index.pug --open",
     "build": "parcel build src/index.pug"
   },
-  "author": "",
+  "author": "Carlo Abella",
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",

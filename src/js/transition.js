@@ -24,7 +24,11 @@ class Fade extends Highway.Transition {
       transformOrigin: 'center center',
       onComplete: function() {
         const container = to.querySelector('.contentWrapper');
-        const ps = new PerfectScrollbar(container);
+        const ps = new PerfectScrollbar(container, {
+          wheelSpeed: 2,
+          wheelPropagation: true,
+          minScrollbarLength: 20
+        });
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         container.addEventListener('ps-scroll-y', (e) => {
           if (e.target.scrollTop >= (vh / 2)) {

@@ -20,7 +20,11 @@ class Renderer extends Highway.Renderer {
   // Hooks/methods
   onEnter() {
     const container = this.wrap.querySelector('.contentWrapper');
-    const ps = new PerfectScrollbar(container);
+    const ps = new PerfectScrollbar(container, {
+      wheelSpeed: 2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
     const slug = this.properties.slug
     document.querySelector(`[data-slug=${slug}]`).classList.add('active');
   }
