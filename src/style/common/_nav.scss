@@ -1,5 +1,5 @@
 .nav {
-  @include flex(flex-start, center);
+  @include flex(flex-start, stretch);
   width: 100%;
   padding: 0 4rem;
 
@@ -14,6 +14,7 @@
 
   // .navItem
   &Item {
+    @include flex(center, center);
     margin: 0 1rem;
   }
 
@@ -21,7 +22,7 @@
   &Link {
     color: $white;
     font-weight: bold;
-
+    pointer-events: all;
     transition: all 0.15s ease-out;
 
     &:hover, &.active {
@@ -34,9 +35,12 @@
     top: 0;
     left: 0;
     width: 100vw;
-    min-height: 10vh;
+    height: 100%;
+    max-height: 8vh;
     z-index: 10;
     transition: all 0.15s ease-out;
+    padding: 1rem 4rem;
+    pointer-events: none;
 
     @media #{$responsive-phone} {
       @include flex(center, center);
@@ -79,6 +83,7 @@
   z-index: 2;
   transition: transform 0.15s ease-out;
   display: none;
+  pointer-events: all;
   @media #{$responsive-phone} {
     @include flex(center, center);
     flex-wrap: wrap;
@@ -102,10 +107,13 @@
 }
 
 .branding {
+  @include flex(flex-start, center);
+  position: relative;
+  pointer-events: all;
+  height: inherit;
   img {
-    width: 100%;
-    max-width: 8rem;
-    height: auto;
+    width: auto;
+    height: 100%;
     transition: all 0.15s ease-out;
 
     &.dark {
@@ -117,16 +125,15 @@
 
 .page-scrolled {
   .mainNav {
-    background-color: $white;
-    min-height: 6vh;
+    background-color: $white !important;
+    max-height: 6vh;
     box-shadow: 0 1rem 1rem rgba($black, 0.1);
   }
   .branding {
     img {
-      max-width: 6rem;
-      opacity: 0;
+      opacity: 0 !important;
       &.dark {
-        opacity: 1;
+        opacity: 1 !important;
       }
     }
   }

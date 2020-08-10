@@ -29,12 +29,24 @@ class Fade extends Highway.Transition {
           wheelPropagation: true,
           minScrollbarLength: 20
         });
+        
+        const mainNav = document.querySelector('.mainNav')
+        const logoWhite = document.querySelector('.branding img.light');
+        const logoDark = document.querySelector('.branding img.dark');
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         container.addEventListener('ps-scroll-y', (e) => {
-          if (e.target.scrollTop >= (vh / 2)) {
-            document.body.classList.add('page-scrolled');
-          } else {
-            document.body.classList.remove('page-scrolled');
+          if (e.target.scrollHeight > (vh * 2)) {
+            const perc = Math.round(e.target.scrollTop / (vh / 2) * 100)
+            if (perc <= 100) {
+              const navHeight = `${8 - (2 * perc / 100)}vh`;
+              console.log(navHeight)
+              mainNav.style.cssText = `max-height: ${navHeight}; background-color: rgba(255, 255, 255, ${perc / 100})`;
+              logoWhite.style.cssText =`opacity: ${1 - perc/100};`
+              logoDark.style.cssText =`opacity: ${perc/100};`
+              document.body.classList.remove('page-scrolled');
+            } else {
+              document.body.classList.add('page-scrolled');
+            }
           }
         })
       },
@@ -54,6 +66,12 @@ class Fade extends Highway.Transition {
       onComplete: function() {
         document.body.classList.remove('page-scrolled');
         document.body.classList.remove('menu-open');
+        const mainNav = document.querySelector('.mainNav')
+        const logoWhite = document.querySelector('.branding img.light');
+        const logoDark = document.querySelector('.branding img.dark');
+        mainNav.style.cssText = `max-height: 8vh; background-color: rgba(255, 255, 255, 0)`;
+        logoWhite.style.cssText =`opacity: 1;`
+        logoDark.style.cssText =`opacity: 0;`
       }
     }, {
       transform: 'scale(0.92)',

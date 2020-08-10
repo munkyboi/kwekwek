@@ -4,6 +4,10 @@
   position: relative;
   min-height: 100vh;
 
+  &:first-of-type {
+    padding-top: 70px;
+  }
+
   &.auto {
     min-height: auto;
   }
@@ -29,6 +33,7 @@
     background-image: url('/image/hero.jpg');
     background-size: cover;
     background-position: center center;
+    padding-top: 0px !important;
 
     .sectionWrapper {
       @include flex(center, center);
