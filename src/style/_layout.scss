@@ -85,10 +85,53 @@ body {
 }
 
 .transitionOverlay {
-  @include overlay(5, 0.5, #000000, fixed);
+  @include overlay(5, 0.75, #000000, fixed);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-out 0s;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba($black, 0.8);
+    background-image: url(/image/icon_light.png);
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid $yellow;
+    border-top-color: transparent;
+    animation: preloaderSpin 1s linear infinite both 0s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes preloaderSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center center;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    transform-origin: center center;
+  }
 }
 
 .footer {

@@ -80,7 +80,6 @@ class Fade extends Highway.Transition {
     const elArr = document.querySelectorAll('[class*=animate]');
     elArr.forEach(el => {
       el.classList.forEach(cl => {
-        console.log('>>>', cl)
         if (cl.indexOf('animate') > -1) {
           el.classList.remove(cl);
         }
