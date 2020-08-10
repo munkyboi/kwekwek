@@ -17,8 +17,13 @@ const H = new Highway.Core({
 
 (() => {
   const container = document.querySelector('.navList');
-  const ps = new PerfectScrollbar(container);
-
+  const ps = new PerfectScrollbar(container, {
+    handlers: ['click-rail', 'drag-thumb', 'keyboard', 'wheel', 'touch'],
+    wheelSpeed: 2,
+    wheelPropagation: true,
+    minScrollbarLength: 20,
+    suppressScrollX : true
+  });
   const burgerBtn = document.querySelector('.burger');
   burgerBtn.addEventListener('click', (e) => {
     e.stopImmediatePropagation();

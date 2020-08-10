@@ -1,9 +1,9 @@
-@import "util/utils";
-@import "layout";
+// vendors
+@import "perfect-scrollbar/css/perfect-scrollbar.css";
 
+// main
+@import "util/utils";
 @import "common/grid";
 @import "common/nav";
 @import "common/section";
-
-// vendors
-@import "perfect-scrollbar/css/perfect-scrollbar.css";
+@import "layout";

@@ -4,21 +4,20 @@
 [![GitHub stars](https://img.shields.io/github/stars/munkyboi/kwekwek-boilerplate?color=%23FFD544&style=for-the-badge)](https://github.com/munkyboi/kwekwek-boilerplate/releases/)
 [![GitHub forks](https://img.shields.io/github/forks/munkyboi/kwekwek-boilerplate?color=%23FFD544&style=for-the-badge)](https://github.com/munkyboi/kwekwek-boilerplate/network)
 
-A barebone HTML template with seamless page transition and element animations.
+A barebone and lightweight HTML template with seamless page transition and element animations.
 
 ## Stack
 [parcel](http://parceljs.org) - Bundler
 
 [pug](https://pugjs.org) - HTML Template Engine
 
-[highway](https://highway.js.org/) - Renderer
+[highway](https://highway.js.org/) - Renderer / AJAX Navigation
 
 [sass](https://sass-lang.com/) - CSS Pre-processor
 
 [gsap](https://greensock.com/gsap/) - JS Animation
 
 [animation.css](https://animate.style/) - CSS Animation
-
 
 ## Demo
 
