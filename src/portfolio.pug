@@ -6,16 +6,20 @@ block content
     .contentWrapper
       section.section.section--portfolio.auto
         .sectionWrapper
-          h1.animated.animate__fadeInUp.animate__delay-900ms Portfolio
-          p.animated.animate__fadeInUp.animate__delay-1200ms
+          h1.animated(data-animation='fadeInUp', data-animation-delay='400') Portfolio
+          p.animated(data-animation='fadeInUp', data-animation-delay='600')
             | Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia odit, unde facilis debitis nam voluptatibus ipsum fugit veniam dolorem enim nemo alias! Commodi libero aliquam laborum sint nesciunt optio. Quaerat laboriosam debitis quos commodi, sequi culpa repellendus voluptatem dignissimos aperiam ipsam voluptas, maiores consectetur, delectus numquam eveniet doloremque aut obcaecati maxime assumenda saepe cumque repudiandae iure! Ex praesentium temporibus tempore. Ullam totam corrupti maxime aspernatur adipisci similique ex doloremque exercitationem explicabo soluta, consequatur nesciunt qui tempora illum fuga, libero corporis at recusandae aperiam assumenda doloribus in! Excepturi illo, vitae accusantium reiciendis praesentium laborum voluptate aliquam temporibus beatae placeat saepe omnis?
-          p.animated.animate__fadeInUp.animate__delay-1500ms
+          p.animated(data-animation='fadeInUp', data-animation-delay='800')
             | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit fuga obcaecati est blanditiis sit architecto provident esse? Mollitia aliquid architecto, voluptatem saepe nostrum explicabo ducimus hic quibusdam, adipisci facilis sint laboriosam dolor, fuga aperiam nesciunt culpa pariatur? Consectetur, corrupti soluta?
       section.section
         .sectionWrapper
-          div(style='width:100%; height:600px; background-color: gray; margin:2rem 0;')
-          div(style='width:100%; height:600px; background-color: gray; margin:2rem 0;')
-          div(style='width:100%; height:600px; background-color: gray; margin:2rem 0;')
-          div(style='width:100%; height:600px; background-color: gray; margin:2rem 0;')
-          div(style='width:100%; height:600px; background-color: gray; margin:2rem 0;')
-          div(style='width:100%; height:600px; background-color: gray; margin:2rem 0;')
+          .row
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')
+          .row
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')
+            .col-8.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')
+          .row
+            .col-3.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')
+            .col-9.animated(data-animation='fadeInUp', data-animation-delay='300', style='height:40vh; background-color: gray;')

@@ -164,6 +164,7 @@
   }
 
   .burger {
+    top: 1rem;
     transform: scale(0.5);
     span {
       &:nth-of-type(1) {

@@ -6,11 +6,31 @@ block content
     .contentWrapper
       section.section.section--hero
         .sectionWrapper
-          .heroContent.animated.animate__fadeInUp.animate__delay-900ms
+          .heroContent.animated(data-animation='fadeInUp', data-animation-delay='300', data-animation-duration='1000')
             h1 Hero Title
             p
               | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident ad obcaecati aliquid asperiores, eos ipsum temporibus alias laborum aliquam deserunt.
-      section.section
+      section.section.auto
         .sectionWrapper
-          div(style='width:100%; height:600px; background-color: red; margin:2rem 0;')
-          div(style='width:100%; height:600px; background-color: cyan; margin:2rem 0;')
+          h1.animated(data-animation='fadeInUp', data-animation-delay='300') Section 3 Columns
+          p.animated(data-animation='fadeInUp', data-animation-delay='600') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic quos sit at illum obcaecati minima eum? Officia eius, expedita nostrum alias nesciunt, esse ipsam porro eaque minus tenetur rem est saepe ut a nisi vel fugit voluptate? Provident illo consectetur inventore. Ullam eveniet odit aspernatur autem, quaerat voluptatem minima, nemo, sit explicabo excepturi distinctio nulla iusto accusantium harum officia cupiditate beatae. Accusamus praesentium similique hic eligendi assumenda debitis delectus reiciendis optio, iure totam natus placeat, voluptatibus ullam minus numquam dicta laudantium pariatur, in fugit. Dolores animi nulla porro at est repellat. Similique non molestias dicta modi voluptatum! Sapiente, saepe quisquam.
+          .row
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='400', style='height:40vh; background-color: gray;')
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='600', style='height:40vh; background-color: gray;')
+            .col-4.animated(data-animation='fadeInUp', data-animation-delay='800', style='height:40vh; background-color: gray;')
+      section.section.auto
+        .sectionWrapper
+          h1.animated(data-animation='fadeInUp', data-animation-delay='100') Section 2 Columns
+          p.animated(data-animation='fadeInUp', data-animation-delay='100') Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dicta temporibus amet fugit iste impedit, corporis magnam commodi, earum totam voluptate eveniet nihil in repudiandae quam voluptatibus, sapiente excepturi ad doloribus? Eligendi dolorem id vero culpa. Officia, minima porro! Perferendis quasi repellat harum voluptatibus nam dolorem possimus nihil nemo animi, similique nisi provident officiis perspiciatis error hic sed consequatur ipsam? Voluptatem eaque minima magnam repellendus deserunt. Dolores, incidunt voluptatem officia minus harum animi autem veniam. Modi, facilis! Eum veniam tempore sed, quibusdam harum distinctio sapiente maxime perferendis magni vel? Quas, rerum eius? Dolore ratione saepe quidem! Perspiciatis eum eos fugit.
+          .row
+            .col-4.animated(data-animation='fadeInLeft', data-animation-delay='400', style='height:40vh; background-color: gray;')
+            .col-8.animated(data-animation='fadeInRight', data-animation-delay='600', style='height:40vh; background-color: gray;')
+      section.section.auto
+        .sectionWrapper
+          h1.animated(data-animation='fadeInUp', data-animation-delay='100') Section 4 Columns
+          p.animated(data-animation='fadeInUp', data-animation-delay='100') Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore culpa, ducimus consectetur quisquam a quis aspernatur fuga impedit error incidunt, fugiat, labore ipsam sequi unde aut nulla voluptatum molestias ea reiciendis exercitationem quo velit eius! Eaque beatae velit qui nulla eos quidem voluptatum eius, cum ipsa nam? Ratione amet explicabo rem quaerat a, consequuntur mollitia repudiandae sed non ea quod est ipsa fugiat recusandae numquam porro animi aliquam soluta obcaecati laudantium. Minus, reprehenderit beatae consectetur, sapiente aliquid consequatur eum culpa odit commodi neque omnis iste architecto autem accusantium quasi, nostrum quae dolores quidem. Expedita quaerat sapiente culpa aspernatur tempora facere.
+          .row
+            .col-3.animated(data-animation='fadeIn', data-animation-delay='400', style='height:40vh; background-color: gray;')
+            .col-3.animated(data-animation='fadeIn', data-animation-delay='600', style='height:40vh; background-color: gray;')
+            .col-3.animated(data-animation='fadeIn', data-animation-delay='800', style='height:40vh; background-color: gray;')
+            .col-3.animated(data-animation='fadeIn', data-animation-delay='1200', style='height:40vh; background-color: gray;')

@@ -33,6 +33,7 @@
     background-image: url('/image/hero.jpg');
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     padding-top: 0px !important;
 
     .sectionWrapper {
@@ -44,18 +45,7 @@
       width: 100%;
       max-width: 40rem;
       padding: 2rem 4rem;
-
-      &:after {
-        @include overlay(-1, 0.85, $violet);
-      }
-
-      h1 {
-        color: $white;
-      }
-    
-      p {
-        color: $lightgray;
-      }
+      background-color: rgba($violet, 0.5);
     }
   }
 
@@ -65,15 +55,8 @@
     background-image: url('/image/about_bg.jpg');
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     color: $white;
-
-    h1 {
-      color: $white;
-    }
-  
-    p {
-      color: $lightgray;
-    }
   }
 
   // .section--portfolio
@@ -82,15 +65,8 @@
     background-image: url('/image/portfolio_bg.jpg');
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     color: $white;
-
-    h1 {
-      color: $white;
-    }
-  
-    p {
-      color: $lightgray;
-    }
   }
 
   // .section--contact
@@ -99,6 +75,7 @@
     background-image: url('/image/contact_bg.jpg');
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
     color: $white;
 
     h1 {
@@ -108,13 +85,20 @@
     p {
       color: $lightgray;
     }
+
+    .contactForm {
+      padding: 2rem;
+      background-color: rgba($black, 0.5);
+    }
   }
 
   h1 {
     margin: 1rem 0;
+    color: $white;
   }
 
   p {
     margin: 1rem 0;
+    color: $lightgray;
   }
 }

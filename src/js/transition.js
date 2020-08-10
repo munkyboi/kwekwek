@@ -1,6 +1,7 @@
 import Highway from '@dogstudio/highway';
 import { TimelineLite } from 'gsap';
 import PerfectScrollbar from 'perfect-scrollbar';
+import inView from 'in-view';
 
 class Fade extends Highway.Transition {
   in({ from, to, done }) {
@@ -25,21 +26,39 @@ class Fade extends Highway.Transition {
       onComplete: function() {
         const container = to.querySelector('.contentWrapper');
         const ps = new PerfectScrollbar(container, {
+          handlers: ['click-rail', 'drag-thumb', 'keyboard', 'wheel', 'touch'],
           wheelSpeed: 2,
           wheelPropagation: true,
-          minScrollbarLength: 20
+          minScrollbarLength: 100,
+          suppressScrollX : true
         });
+          
+        inView('.animated')
+          .on('enter', (e) => {
+            e.classList.remove('animated');
+            if (e.dataset.animation) {
+              const animclass = `animate__${e.dataset.animation}`;
+              e.classList.add(animclass);
+            }
+            if (e.dataset.animationDelay) {
+              const animclassdelay = `animate__delay-${e.dataset.animationDelay}ms`;
+              e.classList.add(animclassdelay);
+            }
+            if (e.dataset.animationDuration) {
+              const animeclassduration = `animate__duration-${e.dataset.animationDuration}ms`;
+            }
+          })
         
         const mainNav = document.querySelector('.mainNav')
         const logoWhite = document.querySelector('.branding img.light');
         const logoDark = document.querySelector('.branding img.dark');
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         container.addEventListener('ps-scroll-y', (e) => {
-          if (e.target.scrollHeight > (vh * 2)) {
+          if (e.target.scrollHeight > (vh * 1.5)) {
             const perc = Math.round(e.target.scrollTop / (vh / 2) * 100)
             if (perc <= 100) {
               const navHeight = `${8 - (2 * perc / 100)}vh`;
-              console.log(navHeight)
+              // console.log(navHeight)
               mainNav.style.cssText = `max-height: ${navHeight}; background-color: rgba(255, 255, 255, ${perc / 100})`;
               logoWhite.style.cssText =`opacity: ${1 - perc/100};`
               logoDark.style.cssText =`opacity: ${perc/100};`

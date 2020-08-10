@@ -1,7 +1,12 @@
-@for $i from 1 through 20 {
+@for $i from 1 through 50 {
   .animate__delay-#{$i * 100}ms  {
-    animation-duration: 300ms !important;
     animation-delay: #{$i * 100}ms !important;
+    animation-fill-mode: both;
+  }
+}
+@for $i from 1 through 50 {
+  .animate__duration-#{$i * 100}ms  {
+    animation-duration: #{$i * 100}ms !important;
     animation-fill-mode: both;
   }
 }
