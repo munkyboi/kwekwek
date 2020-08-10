@@ -28,7 +28,7 @@ A barebone HTML template with seamless page transition and element animations.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [npm](https://nodejs.org/en/) to install kwekwek template.
 
 ```bash
 npm install
