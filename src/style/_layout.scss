@@ -44,12 +44,7 @@ body {
     animation-duration: 500ms;
   }
 
-  &.animating {
-    .animated, .animate__animated, [class^=animate__delay-] {
-      opacity: 0 !important;
-      animation-delay: 0s !important;
-    }
-    
+  &.transitioning {
     .main {
       .contentWrapper {
         overflow-y: hidden;
@@ -63,6 +58,12 @@ body {
 
     .ps__rail-y, .ps__rail-x {
       display: none;
+    }
+
+    .mainNav {
+      .navLink {
+        pointer-events: none;
+      }
     }
   }
 }
@@ -102,8 +103,10 @@ body {
   z-index: 2;
 
   p {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     color: $gray;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
   }
 
   a {
@@ -117,4 +120,20 @@ body {
 
 .ps__rail-y, .ps__rail-x {
   z-index: 1000;
+}
+
+.text {
+  text-align: inherit;
+  // .text--left
+  &--left {
+    text-align: left;
+  }
+  // .text--right
+  &--right {
+    text-align: right;
+  }
+  // .text--center
+  &--center {
+    text-align: center;
+  }
 }

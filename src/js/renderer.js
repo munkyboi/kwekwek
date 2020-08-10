@@ -46,7 +46,6 @@ class Renderer extends Highway.Renderer {
         const perc = Math.round(e.target.scrollTop / (vh / 2) * 100)
         if (perc <= 100) {
           const navHeight = `${8 - (2 * perc / 100)}vh`;
-          // console.log(navHeight)
           mainNav.style.cssText = `max-height: ${navHeight}; background-color: rgba(255, 255, 255, ${perc / 100})`;
           logoWhite.style.cssText =`opacity: ${1 - perc/100};`
           logoDark.style.cssText =`opacity: ${perc/100};`
@@ -65,5 +64,4 @@ class Renderer extends Highway.Renderer {
   // onLeaveCompleted() {}
 }
 
-// Don`t forget to export your renderer
 export default Renderer;

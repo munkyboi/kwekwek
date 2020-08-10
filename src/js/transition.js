@@ -14,7 +14,7 @@ class Fade extends Highway.Transition {
       opacity: '1',
       zIndex: '2',
       onComplete: function() {
-        document.body.classList.remove('animating');
+        document.body.classList.remove('transitioning');
         from.remove();
       },
     }).fromTo(to, 0.3, {
@@ -46,6 +46,7 @@ class Fade extends Highway.Transition {
             }
             if (e.dataset.animationDuration) {
               const animeclassduration = `animate__duration-${e.dataset.animationDuration}ms`;
+              e.classList.add(animeclassduration);
             }
           })
         
@@ -58,7 +59,6 @@ class Fade extends Highway.Transition {
             const perc = Math.round(e.target.scrollTop / (vh / 2) * 100)
             if (perc <= 100) {
               const navHeight = `${8 - (2 * perc / 100)}vh`;
-              // console.log(navHeight)
               mainNav.style.cssText = `max-height: ${navHeight}; background-color: rgba(255, 255, 255, ${perc / 100})`;
               logoWhite.style.cssText =`opacity: ${1 - perc/100};`
               logoDark.style.cssText =`opacity: ${perc/100};`
@@ -75,7 +75,17 @@ class Fade extends Highway.Transition {
 
   out({ from, trigger, done }) {
     const tl = new TimelineLite();
-    document.body.classList.add('animating');
+    document.body.classList.add('transitioning');
+
+    const elArr = document.querySelectorAll('[class*=animate]');
+    elArr.forEach(el => {
+      el.classList.forEach(cl => {
+        console.log('>>>', cl)
+        if (cl.indexOf('animate') > -1) {
+          el.classList.remove(cl);
+        }
+      })
+    })
     
     tl.fromTo(from, 0.3, {
       transform: 'scale(1)',

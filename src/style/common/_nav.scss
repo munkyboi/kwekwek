@@ -42,6 +42,10 @@
     padding: 1rem 4rem;
     pointer-events: none;
 
+    .navLink {
+      text-transform: lowercase;
+    }
+
     @media #{$responsive-phone} {
       @include flex(center, center);
       .nav {
