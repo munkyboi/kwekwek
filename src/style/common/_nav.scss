@@ -75,8 +75,7 @@
 }
 
 .burger {
-  position: fixed;
-  top: 1rem;
+  position: absolute;
   right: 1rem;
   width: 2.2rem;
   height: 2.2rem;
@@ -147,7 +146,6 @@
   }
 
   .burger {
-    top: 0.25rem;
     span {
       background-color: $darkgray;
     }
