@@ -1,0 +1,158 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  width: auto;
+  font-weight: bold;
+  transition: background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba($white, 0.5);
+  color: $white;
+  background-color: rgba($white, 0.05);
+  position: relative;
+
+  margin: 1rem 0;
+  &:not(:last-of-type) {
+    margin-right: 0.5rem;
+  }
+  
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: $white;
+    transition: background-color 0.15s ease-out, width 0.15s ease-out;
+  }
+
+  &:hover {
+    color: $darkgray;
+    border-color: rgba($white, 1);
+    &:before {
+      width: 100%;
+    }
+  }
+
+  // .btn--primary
+  &--primary {
+    border-color: $primary;
+    color: lighten($primary, 20%);
+    background-color: rgba($primary, 0.05);
+    &:before {
+      background-color: $primary;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($primary, 1);
+      &:before {
+        background-color: $primary;
+      }
+    }
+  }
+
+  // .btn--secondary
+  &--secondary {
+    border-color: $secondary;
+    color: lighten($secondary, 20%);
+    background-color: rgba($secondary, 0.05);
+    &:before {
+      background-color: $secondary;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($secondary, 1);
+      &:before {
+        background-color: $secondary;
+      }
+    }
+  }
+
+  // .btn--tertiary
+  &--tertiary {
+    border-color: $tertiary;
+    color: lighten($tertiary, 20%);
+    background-color: rgba($tertiary, 0.05);
+    &:before {
+      background-color: $tertiary;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($tertiary, 1);
+      &:before {
+        background-color: $tertiary;
+      }
+    }
+  }
+
+  // .btn--success
+  &--success {
+    border-color: $success;
+    color: lighten($success, 20%);
+    background-color: rgba($success, 0.05);
+    &:before {
+      background-color: $success;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($success, 1);
+      &:before {
+        background-color: $success;
+      }
+    }
+  }
+
+  // .btn--info
+  &--info {
+    border-color: $info;
+    color: lighten($info, 20%);
+    background-color: rgba($info, 0.05);
+    &:before {
+      background-color: $info;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($info, 1);
+      &:before {
+        background-color: $info;
+      }
+    }
+  }
+
+  // .btn--warning
+  &--warning {
+    border-color: $warning;
+    color: lighten($warning, 20%);
+    background-color: rgba($warning, 0.05);
+    &:before {
+      background-color: $warning;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($warning, 1);
+      &:before {
+        background-color: $warning;
+      }
+    }
+  }
+
+  // .btn--danger
+  &--danger {
+    border-color: $danger;
+    color: lighten($danger, 20%);
+    background-color: rgba($danger, 0.05);
+    &:before {
+      background-color: $danger;
+    }
+    &:hover {
+      color: $white;
+      border-color: rgba($danger, 1);
+      &:before {
+        background-color: $danger;
+      }
+    }
+  }
+}

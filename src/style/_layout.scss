@@ -148,6 +148,7 @@ body {
     color: $gray;
     text-transform: uppercase;
     letter-spacing: 0.25rem;
+    margin: 0;
   }
 
   a {
@@ -161,20 +162,4 @@ body {
 
 .ps__rail-y, .ps__rail-x {
   z-index: 1000;
-}
-
-.text {
-  text-align: inherit;
-  // .text--left
-  &--left {
-    text-align: left;
-  }
-  // .text--right
-  &--right {
-    text-align: right;
-  }
-  // .text--center
-  &--center {
-    text-align: center;
-  }
 }

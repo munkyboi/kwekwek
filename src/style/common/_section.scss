@@ -4,6 +4,7 @@
   position: relative;
   min-height: 100vh;
   background-color: $black;
+  line-height: 1.4;
 
   &:first-of-type {
     padding-top: 70px;
@@ -60,6 +61,18 @@
     background-position: center center;
     background-attachment: fixed;
     color: $white;
+
+    .bigLogoContainer {
+      @include flex(flex-start, center);
+    }
+    .bigLogo {
+      width: min(300px, 100%);
+      height: auto;
+      border-radius: 50%;
+      background-color: rgba($white, 0.15);
+      object-fit: contain;
+      padding: 2rem;
+    }
   }
 
   // .section--portfolio
@@ -95,13 +108,11 @@
     }
   }
 
-  h1 {
-    margin: 1rem 0;
+  h1, h2, h3, h4, h5, h6 {
     color: $white;
   }
 
   p {
-    margin: 1rem 0;
     color: $lightgray;
   }
 }
