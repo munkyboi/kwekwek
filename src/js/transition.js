@@ -47,11 +47,11 @@ class Fade extends Highway.Transition {
             tl.fromTo(trElCover, 0.3, {
               display: 'block',
               opacity: 1,
-              transform: 'translateY(0%)',
+              top: '0%',
             }, {
               display: 'block',
               opacity: 1,
-              transform: 'translateY(100%)',
+              top: '100%',
               onComplete: function() {
                 tl.fromTo(to, 0.3, {
                   transform: 'scale(0.92)',
@@ -60,6 +60,7 @@ class Fade extends Highway.Transition {
                   transform: 'scale(1)',
                   transformOrigin: 'center center',
                   onComplete: function() {
+                    trEl.style.cssText = 'display: none; opacity: 0;';
                     const container = to.querySelector('.contentWrapper');
                     const ps = new PerfectScrollbar(container, {
                       handlers: ['click-rail', 'drag-thumb', 'keyboard', 'wheel', 'touch'],
@@ -124,7 +125,7 @@ class Fade extends Highway.Transition {
     document.body.classList.add('transitioning');
 
     // prevent element animation from triggering again when exiting
-    [...document.querySelectorAll('[class*=animate]')].forEach(el => {
+    [...document.querySelectorAll('*[class*=animate]')].forEach(el => {
       [...el.classList].forEach(cl => {
         if (cl.indexOf('animate') > -1) {
           el.classList.remove(cl);
@@ -153,11 +154,11 @@ class Fade extends Highway.Transition {
         tl.fromTo(trElCover, 0.3, {
           display: 'block',
           opacity: 1,
-          transform: 'translateY(-100%)',
+          top: '-100%',
         }, {
           display: 'block',
           opacity: 1,
-          transform: 'translateY(0%)',
+          top: '0%',
           onComplete: function() {
             // proceed with incoming function
             tl.to(trElSpin, 0.3, {
