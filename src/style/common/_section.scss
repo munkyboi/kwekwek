@@ -3,6 +3,7 @@
   width: 100%;
   position: relative;
   min-height: 100vh;
+  background-color: $black;
 
   &:first-of-type {
     padding-top: 70px;
@@ -12,8 +13,10 @@
     min-height: auto;
   }
 
-  &:before {
-    @include overlay(1, 0.85, #1a1423, absolute);
+  &.overlay {
+    &:before {
+      @include overlay(1, 0.85, $overlay, absolute);
+    }
   }
 
   // .sectionWrapper

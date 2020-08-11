@@ -52,9 +52,10 @@ body {
       }
     }
 
-    .transitionOverlay {
-      opacity: 1;
-    }
+    // .transitionOverlay {
+    //   opacity: 1;
+    //   // transition: none;
+    // }
 
     .ps__rail-y, .ps__rail-x {
       display: none;
@@ -74,6 +75,7 @@ body {
     perspective: 100vw;
     transform-origin: center center;
     position: fixed;
+    overflow: hidden;
   }
   .contentWrapper {
     position: relative;
@@ -85,52 +87,48 @@ body {
 }
 
 .transitionOverlay {
-  @include overlay(5, 0.75, #000000, fixed);
-  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  display: none;
   pointer-events: none;
-  transition: opacity 0.3s ease-out 0s;
+  height: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  // .transitionOverlay__cover
+  &__cover {
+    @include overlay(5, 1, $overlay);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
 
-  &:before {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 60px;
+  // .transitionOverlay__spin
+  &__spin {
+    width: 80px;
+    height: 80px;
+    display: none;
+    opacity: 0;
+
     border-radius: 50%;
-    background-color: rgba($black, 0.8);
-    background-image: url(/image/icon_light.png);
+    background-color: $white;
+    background-image: url(/image/icon.png);
     background-size: 80%;
     background-position: center center;
     background-repeat: no-repeat;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: center center;
-  }
-  &:after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 5px solid $yellow;
-    border-top-color: transparent;
-    animation: preloaderSpin 1s linear infinite both 0s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
 
-@keyframes preloaderSpin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     transform-origin: center center;
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-    transform-origin: center center;
+    z-index: 6;
+    margin-top: -3rem;
   }
 }
 

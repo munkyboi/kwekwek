@@ -2,9 +2,8 @@ extends _layout.pug
 
 block content
   .content(data-router-view='home')
-    .transitionOverlay
     .contentWrapper
-      section.section.section--hero
+      section.section.section--hero.overlay
         .sectionWrapper
           .heroContent.animated(data-animation='fadeInUp', data-animation-delay='300', data-animation-duration='1000')
             h1 kwekwek template
