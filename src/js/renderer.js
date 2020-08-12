@@ -2,11 +2,19 @@ import Highway from '@dogstudio/highway';
 import {
   createTransitionElements,
   setCustomScrollbar,
-  clearPageModifiers } from './utils';
+  clearPageModifiers
+} from './utils';
+import Quicklink, { listen, prefetch} from 'quicklink/dist/quicklink.mjs';
+import 'intersection-observer';
 
 class Renderer extends Highway.Renderer {
   // Hooks/methods
   onEnter() {
+    // prefetch all links
+    listen({
+      el: this.wrap
+    });
+    
     // clear all page modifiers from previous transition
     clearPageModifiers();
 
