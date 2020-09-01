@@ -25,6 +25,9 @@ A barebone and lightweight HTML template with seamless page transition and eleme
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a67120ca-668c-4d96-ac9c-5526be1c3ec8/deploy-status)](https://app.netlify.com/sites/kwekwek/deploys)
 
+#### PageSpeed Insight
+[![Google PageSpeed Insight](https://raw.githubusercontent.com/munkyboi/kwekwek/master/src/image/pagespeedinsight.jpg)](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fkwekwek.netlify.app%2Findex.html&tab=desktop)
+
 ## Installation
 
 Use the package manager [npm](https://nodejs.org/en/) to install kwekwek template.
